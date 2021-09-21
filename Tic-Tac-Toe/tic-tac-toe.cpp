@@ -68,7 +68,8 @@ void player1Turn() {
 		std::cin >> placement;
 		clearcin();
 
-		//Takes player 1's "placement" value and changes it's corresponding "table" value to an 'X'
+		/*Takes player 1's "placement" value and changes it's corresponding "table" value
+		to an 'X'*/
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
 				if (placement == table[i][j]) {
@@ -108,7 +109,7 @@ void player1Turn() {
 
 void player2Turn() {
 	while (player2 == true) {
-		//Resets the 'check' bool to it's default value
+		//Resets the "check" bool to it's default value
 		check = false;
 
 		//Asks where player 2 would like to place it's '0'
@@ -116,7 +117,8 @@ void player2Turn() {
 		std::cin >> placement;
 		clearcin();
 
-		//Takes player 2's "placement" value and changes it's corresponding "table" value to an '0'
+		/*Takes player 2's "placement" value and changes it's corresponding "table" value
+		to an '0'*/
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
 				if (placement == table[i][j]) {
@@ -138,8 +140,8 @@ void player2Turn() {
 			player2 = false;
 			player1 = true;
 		}
-		/*If it's an invalid placement, it gets player 2 to try again by changing 'player2'
-		to 'true' and 'player1' to 'false'*/
+		/*If it's an invalid placement, it gets player 2 to try again by changing "player2"
+		to "true" and "player1" to "false"*/
 		else if (check == false) {
 			system("cls");
 			tableBuild();
@@ -170,7 +172,7 @@ void tableBuild() {
 }
 
 /*When the game has ended, it will manually change all the values of the table to '1', '2',
-'3', and so on*/
+'3', and so on. Then print the new table*/
 void newTable() {
 	table[0][0] = '1';
 	table[0][1] = '2';
@@ -197,7 +199,7 @@ void newTable() {
 }
 
 /*Checks if any of the players has gotten the same values 3 in a row (either 
-horisontally, vertically or diagonally). If it has it will say that that player has won the
+horizontally, vertically or diagonally). If it has it will say that that player has won the
 game, and then ends the game. (See last 'else if' statement for how I calculate if the game
 has come to a draw)*/
 void gameEnd() {
@@ -298,7 +300,8 @@ void gameEnd() {
 	return;
 }
 
-//Asks if player want to start a new game
+/*Asks if players want to start a new game. This is in an infinite-while-loop in case user
+presses an invalid input*/
 void gameRepeat() {
 	while (true) {
 		std::cout << "Would you like to start a new game? (y/n): ";
